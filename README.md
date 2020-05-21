@@ -1,4 +1,4 @@
-# ProjectEulerNg
+# ProjectEulerNg [![Build Status](https://travis-ci.org/the-james-burton/project-euler-ng.svg?branch=master)](https://travis-ci.org/the-james-burton/project-euler-ng)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
 
