@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {CompactType, DisplayGrid, Draggable, GridsterConfig, GridsterItem, GridType, PushDirections, Resizable} from 'angular-gridster2';
+import { EulerService } from '../euler.service';
 
 interface Safe extends GridsterConfig {
   draggable: Draggable;
@@ -18,7 +19,14 @@ export class EulerComponent implements OnInit {
   options: Safe;
   dashboard: Array<GridsterItem>;
 
+  constructor(private eulerService: EulerService) {}
+
   ngOnInit() {
+
+    this.eulerService
+      .getServerSentEvent('http://localhost:8080/euler/smoke')
+      .subscribe(data => console.log(data));
+
     this.options = {
       gridType: GridType.Fit,
       compactType: CompactType.None,
