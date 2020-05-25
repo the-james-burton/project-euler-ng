@@ -25,6 +25,8 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { EulerEffects } from './effects/euler.effects';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { environment } from '../environments/environment';
     EulerComponent,
     NotFoundComponent,
     GridComponent,
-    SolutionComponent
+    SolutionComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,14 +58,18 @@ import { environment } from '../environments/environment';
     GridsterModule,
     StoreModule.forRoot({}, {}),
     StoreModule.forRoot(reducers, {
-      metaReducers, 
+      metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true,
-      }
+      },
     }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
+    EffectsModule.forRoot([EulerEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],
