@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "project-euler-ng"
+  "defaultProject": "project-euler-ng",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

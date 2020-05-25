@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { StoreService } from '../store.service';
+import { StoreService } from '../store/store.service';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({

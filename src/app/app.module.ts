@@ -21,6 +21,10 @@ import { EulerComponent } from './euler/euler.component';
 import { GridComponent } from './grid/grid.component';
 import { NotFoundComponent } from './not-found.component';
 import { SolutionComponent } from './solution/solution.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -50,6 +54,16 @@ import { SolutionComponent } from './solution/solution.component';
     MatListModule,
     FormsModule,
     GridsterModule,
+    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(reducers, {
+      metaReducers, 
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+      }
+    }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],

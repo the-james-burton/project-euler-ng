@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
-import { EulerService } from './euler.service';
+import { EulerService } from '../euler.service';
 import { pluck } from 'rxjs/operators';
 
 @Injectable({
