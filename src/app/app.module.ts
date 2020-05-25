@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { EulerComponent } from './euler/euler.component';
 import { GridComponent } from './grid/grid.component';
 import { NotFoundComponent } from './not-found.component';
+import { SolutionComponent } from './solution/solution.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NotFoundComponent } from './not-found.component';
     EulerComponent,
     NotFoundComponent,
     GridComponent,
+    SolutionComponent
   ],
   imports: [
     BrowserModule,

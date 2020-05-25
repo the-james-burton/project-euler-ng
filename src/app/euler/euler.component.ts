@@ -23,9 +23,9 @@ export class EulerComponent implements OnInit {
 
   ngOnInit() {
 
-    this.eulerService
-      .getServerSentEvent('http://localhost:8080/euler/smoke')
-      .subscribe(data => console.log(data));
+    //this.eulerService
+    //  .getServerSentEvent('http://localhost:8080/euler/smoke')
+    //  .subscribe(data => console.log(data));
 
     this.options = {
       gridType: GridType.Fit,
